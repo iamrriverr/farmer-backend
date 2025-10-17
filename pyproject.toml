@@ -1,0 +1,79 @@
+[project]
+name = "farmer-backend"
+version = "0.1.0"
+description = "Farmer RAG System - AI-powered agricultural consultation backend"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Web Framework
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "python-multipart>=0.0.12",
+    "websockets>=13.1",
+
+    # Database
+    "psycopg2-binary>=2.9.9",
+    "chromadb>=0.5.0",
+
+    # Authentication & Security
+    "python-jose[cryptography]>=3.3.0",
+    "argon2-cffi>=23.1.0",                    # 🔥 新增：Argon2 密碼加密
+    "python-dotenv>=1.0.1",
+
+    # AI/RAG Stack
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-community>=0.3.0",
+    "langchain-google-genai>=2.0.0",          # 🔥 新增：Google Gemini 支援
+    "langchain-text-splitters>=0.3.0",        # 🔥 新增：Text Splitters
+    "openai>=1.51.0",
+    "google-generativeai>=0.8.0",             # 🔥 新增：Google AI SDK
+
+    # Document Processing
+    "pypdf>=5.0.0",
+    "python-docx>=1.1.2",
+    "docx2txt>=0.8",                          # 🔥 新增：DOCX 文字提取
+    "unstructured>=0.15.0",                   # 🔥 新增：通用文件載入
+    "unstructured[xlsx]>=0.15.0",             # 🔥 新增：Excel 支援
+
+    # Hybrid Search (BM25 + Chinese)
+    "rank-bm25>=0.2.2",                       # 🔥 新增：BM25 演算法
+    "jieba>=0.42.1",                          # 🔥 新增：中文分詞
+
+    # Data Validation
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "email-validator>=2.2.0",
+
+    # HTTP Client
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "black>=24.8.0",
+    "ruff>=0.6.0",
+    "mypy>=1.11.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
