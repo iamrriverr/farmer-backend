@@ -1,8 +1,6 @@
 
 ***
 
-# Farmer RAG System API 完整文件
-
 ## 系統資訊
 
 **基礎 URL**: `http://localhost:8000`  
