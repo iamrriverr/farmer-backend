@@ -10,16 +10,13 @@ dependencies = [
     "uvicorn[standard]>=0.32.0",
     "python-multipart>=0.0.12",
     "websockets>=13.1",
-
     # Database
     "psycopg2-binary>=2.9.9",
     "chromadb>=0.5.0",
-
     # Authentication & Security
     "python-jose[cryptography]>=3.3.0",
     "argon2-cffi>=23.1.0",                    # 🔥 新增：Argon2 密碼加密
     "python-dotenv>=1.0.1",
-
     # AI/RAG Stack
     "langchain>=0.3.0",
     "langchain-openai>=0.2.0",
@@ -28,25 +25,22 @@ dependencies = [
     "langchain-text-splitters>=0.3.0",        # 🔥 新增：Text Splitters
     "openai>=1.51.0",
     "google-generativeai>=0.8.0",             # 🔥 新增：Google AI SDK
-
     # Document Processing
     "pypdf>=5.0.0",
     "python-docx>=1.1.2",
     "docx2txt>=0.8",                          # 🔥 新增：DOCX 文字提取
     "unstructured>=0.15.0",                   # 🔥 新增：通用文件載入
     "unstructured[xlsx]>=0.15.0",             # 🔥 新增：Excel 支援
-
     # Hybrid Search (BM25 + Chinese)
     "rank-bm25>=0.2.2",                       # 🔥 新增：BM25 演算法
     "jieba>=0.42.1",                          # 🔥 新增：中文分詞
-
     # Data Validation
     "pydantic>=2.9.0",
     "pydantic-settings>=2.5.0",
     "email-validator>=2.2.0",
-
     # HTTP Client
     "httpx>=0.27.0",
+    "numpy>=2.3.4",
 ]
 
 [project.optional-dependencies]
